@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
-import { UpdateUsername, deleteUser } from "../../features/Users";
+import { UpdateUsername, deleteUser } from "../../reducers/UsersReducer";
 
 const UserCard = ({ user }) => {
   const dispatch = useDispatch();

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addUser } from "../../features/Users";
+import { addUser } from "../../reducers/UsersReducer";
 
 const AddUser = () => {
   const dispatch = useDispatch();

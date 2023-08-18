@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import UserCard from "./UserCard";
 
 const DisplayUsers = () => {
-  const usersList = useSelector((state) => state.users.value);
+  const usersList = useSelector((state) => state.usersReducer.value);
 
   return (
     <div className="displayUsers">

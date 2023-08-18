@@ -2,8 +2,8 @@ import { createSlice } from '@reduxjs/toolkit'
 import { UsersData } from '../Fakedata'
 
 
-export const UserSlice = createSlice({
-    name: 'users',
+export const UsersReducer = createSlice({
+    name: 'usersReducer',
     initialState: { value: UsersData },
     reducers: {
         addUser: (state, action) => {
@@ -13,6 +13,7 @@ export const UserSlice = createSlice({
         deleteUser: (state, action) => {
             state.value = state.value.filter((user) => user.id !== action.payload.id);
         },
+        
         UpdateUsername: (state, action) => {
             state.value = state.value.map((user) => {
                 if (user.id === action.payload.id) {
@@ -24,6 +25,6 @@ export const UserSlice = createSlice({
 
     },
 });
-export const { addUser, deleteUser, UpdateUsername } = UserSlice.actions;
+export const { addUser, deleteUser, UpdateUsername } = UsersReducer.actions;
 
-export default UserSlice.reducer;
+export default UsersReducer.reducer;
