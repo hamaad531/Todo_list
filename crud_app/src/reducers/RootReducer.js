@@ -5,7 +5,7 @@
  * do proper naming convention
  */
 
-import "./UsersReducer";
+import UsersReducer from "./UsersReducer";
 
 const combinedReducers = {
   // Keep reducer key same as reducer name
