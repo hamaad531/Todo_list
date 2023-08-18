@@ -5,11 +5,16 @@ import { UpdateUsername, deleteUser } from "../../reducers/UsersReducer";
 
 const UserCard = ({ user }) => {
   const dispatch = useDispatch();
+
   const [newUsername, setNewUsername] = useState("");
 
   const handleUpdate = (userId) => {
     dispatch(UpdateUsername({ id: userId, username: newUsername }));
     setNewUsername("");
+  };
+
+  const handledelete = (userId) => {
+    dispatch(deleteUser({ id: userId }));
   };
 
   return (
@@ -23,9 +28,7 @@ const UserCard = ({ user }) => {
         onChange={(e) => setNewUsername(e.target.value)}
       />
       <button onClick={() => handleUpdate(user.id)}>Update</button>
-      <button onClick={() => dispatch(deleteUser({ id: user.id }))}>
-        Delete
-      </button>
+      <button onClick={() => handledelete(user.id)}>Delete</button>
     </div>
   );
 };
